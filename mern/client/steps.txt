@@ -1,0 +1,20 @@
+terminal--- at mern location npm create vite@latest ---> select reactvite js and name project as client
+cd client
+npm install 
+delete eslint.config.js
+clear data from app.jsx , app.css, index.css, 
+rafce in app.jsx
+delete strict from main .jsx last and first lines
+
+
+
+installing tailwind now 
+#npm install tailwindcss @tailwindcss/vite
+add and import tailwindcss in vite.config.js file
+
+add import tailwind css in index.css
+
+npm run build 
+mv build from client to server 
+change build to dist in app.js
+npm start (make sure type module snd script edited in package.json)

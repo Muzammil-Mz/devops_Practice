@@ -1,0 +1,8 @@
+create two folders client and server 
+get into server
+npm init-y
+npm i express
+create build folder 
+create index.html in build
+create app.js in mern
+create .gitignore and add node moudles in it
