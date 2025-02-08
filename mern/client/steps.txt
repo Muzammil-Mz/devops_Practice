@@ -1,20 +1,66 @@
-terminal--- at mern location npm create vite@latest ---> select reactvite js and name project as client
-cd client
-npm install 
-delete eslint.config.js
-clear data from app.jsx , app.css, index.css, 
-rafce in app.jsx
-delete strict from main .jsx last and first lines
+create two dir client and server 
+client for front end and  server for backend
+
+//server//
+create app.js .gittgnore
+#npm init -y
+#npm i express
+#edit package.json 
+add nodemodules in .git ignore
+mkdir build and create index.html (for check later file will be deeleted in coming steps)
+add basic code in index.html
 
 
 
-installing tailwind now 
-#npm install tailwindcss @tailwindcss/vite
-add and import tailwindcss in vite.config.js file
 
-add import tailwind css in index.css
 
-npm run build 
-mv build from client to server 
-change build to dist in app.js
-npm start (make sure type module snd script edited in package.json)
+#paste below code in app.js 
+import express from "express"
+import path from "path"
+import { fileURLToPath } from "url"
+const __filename=fileURLToPath(import.meta.url)
+const __dirname=path.dirname(__filename)
+
+
+
+const app=express()
+const port=5002
+
+app.use(express.static(path.join (__dirname,"dist")))
+app.get("/suhail",(req,res)=>{
+    res.status(200).json({message:"HELLO Suhail"})
+})
+
+app.get("/*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"dist","index.html"))
+})
+
+app.listen(port,()=>{
+    console.log(`Server is up and listeing `);
+})
+
+//client//
+get back to main folder 
+#npm create vite@latest
+#project name as client
+react ; js
+cd client 
+#npm install 
+delete eslint file from client 
+clear data from app.jsx index.css app.css 
+rfcae in app.jsx
+clear strictmode lines in main .jsx
+
+
+now install tailwind css
+npm install tailwindcss @tailwindcss/vite
+import tailwind css in vite.config.js file
+write a simple hello world in h1 tag in app.jsx
+import tailwindcss in index.css as app.css gives file to index.css
+check whether tailwind has appiled for hello world by npm run dev
+if works 
+#npm run build
+move this folde of dist from client to server
+delete build folder made in starting 
+npm start in server 
+
